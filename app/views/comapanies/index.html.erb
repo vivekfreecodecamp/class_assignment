@@ -1,0 +1,29 @@
+<h1>Listing comapanies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Established</th>
+      <th>Intger</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @comapanies.each do |comapany| %>
+      <tr>
+        <td><%= comapany.name %></td>
+        <td><%= comapany.established %></td>
+        <td><%= comapany.intger %></td>
+        <td><%= link_to 'Show', comapany %></td>
+        <td><%= link_to 'Edit', edit_comapany_path(comapany) %></td>
+        <td><%= link_to 'Destroy', comapany, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Comapany', new_comapany_path %>
